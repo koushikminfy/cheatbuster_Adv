@@ -8,11 +8,11 @@ body {
 }
 
 .container {
-  background: white;
+  background: pink;
   padding: 2rem;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
+  border-radius:5px;
+  width: 120%;
+  max-width: 500px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
 }
@@ -58,5 +58,28 @@ button {
 
 .safe {
   color: #2a9d8f;
+  font-weight: bold;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.safe {
+  color: green;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
   font-weight: bold;
 }
