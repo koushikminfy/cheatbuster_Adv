@@ -1,7 +1,6 @@
-# 🕵️ Medium Cheat Buster App - Complete Setup Guide
-
+#  Medium Cheat Buster App 
 ## Overview
-This enhanced version includes all three requested features:
+  three features:
 1. **Search by Name** - Users can search by first or last name
 2. **Better Loading State** - Buttons show "Searching..." and are disabled during requests
 3. **API Service Refactor** - Clean separation of API calls in a dedicated service
@@ -32,6 +31,7 @@ project-root/
 ```bash
 bun install
 ```
+![image](https://github.com/user-attachments/assets/b57a0a4c-1a72-4357-b902-c82a8935b70d)
 
 ### 2. Set up Environment Variables
 Create a `.env` file in the root directory:
@@ -41,29 +41,21 @@ PORT=3000
 NODE_ENV=development
 ```
 
-### 3. Make sure MongoDB is running
-```bash
-# On macOS with Homebrew
-brew services start mongodb-community
-
-# On Ubuntu/Debian
-sudo systemctl start mongod
-
-# On Windows, start MongoDB service
-```
-
-### 4. Seed the Database
+### 3. Seed the Database
 ```bash
 bun run seed.js
 ```
+![image](https://github.com/user-attachments/assets/c62b75c0-8836-45f5-9785-3819c91cc31b)
 
-### 5. Start the Server
+### 4. Start the Server
 ```bash
 bun run index.js
 ```
+![image](https://github.com/user-attachments/assets/141996ca-46e7-4f9b-b7b1-0e12e125a545)
 
-### 6. Open the App
-Visit `http://localhost:3000` in your browser.
+![image](https://github.com/user-attachments/assets/bba968c6-e419-4604-9006-5f7e9c7e87a2)
+![image](https://github.com/user-attachments/assets/9a8ae68d-756b-4387-8462-5b0fac505328)
+![image](https://github.com/user-attachments/assets/9990bb6a-b80b-4564-ae28-78914849cf61)
 
 ## Features Implemented
 
@@ -113,76 +105,3 @@ GET /api/users/search?name=John
 GET /api/users
 ```
 
-## Key Learning Points
-
-### Backend Enhancements
-1. **Flexible Query Building**: Using MongoDB `$or` operator for multiple search criteria
-2. **Input Validation**: Zod schemas with custom refinement rules
-3. **Error Handling**: Proper HTTP status codes and error messages
-4. **Case-Insensitive Search**: Using regex with `$options: 'i'`
-
-### Frontend Enhancements
-1. **State Management**: Proper loading states and user feedback
-2. **Code Organization**: Separation of concerns with API service
-3. **User Experience**: Disabled buttons, loading text, and error handling
-4. **Event Handling**: Enter key support and input clearing logic
-
-### Modern Development Practices
-1. **Modular Code**: Separate files for different concerns
-2. **Error Boundaries**: Comprehensive try-catch blocks
-3. **User Feedback**: Clear loading states and error messages
-4. **Responsive Design**: Mobile-friendly interface
-
-## Testing the App
-
-### Test Search by Email
-1. Enter an email in the email field
-2. Click "Search by Email"
-3. Verify the button shows "Searching..." and is disabled
-4. Check that results display correctly
-
-### Test Search by Name
-1. Enter a name in the name field
-2. Click "Search by Name"
-3. Verify loading state and results
-4. Try partial names to test regex matching
-
-### Test Error Handling
-1. Search for non-existent users
-2. Try invalid email formats
-3. Test with empty inputs
-4. Verify proper error messages
-
-## Common Issues & Solutions
-
-### MongoDB Connection Issues
-- Ensure MongoDB is running
-- Check the connection string in `.env`
-- Verify database permissions
-
-### API Service Not Working
-- Check browser console for errors
-- Ensure `api.js` is loaded before `script.js`
-- Verify axios is properly loaded
-
-### Search Not Working
-- Check network tab for API requests
-- Verify server is running on correct port
-- Check for CORS issues
-
-## Next Steps for Advanced Students
-
-1. **Add Pagination**: Implement pagination for user lists
-2. **Add Filters**: Age range, city filters
-3. **Add Sorting**: Sort by name, age, etc.
-4. **Add Caching**: Implement client-side caching
-5. **Add Authentication**: User login/logout
-6. **Add Real-time Updates**: WebSocket integration
-
-## Conclusion
-
-This enhanced version demonstrates full-stack development best practices:
-- Clean API design with proper error handling
-- Modular frontend code with service layers
-- User-friendly interface with loading states
-- Robust search functionality with flexible queries
